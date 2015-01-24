@@ -130,7 +130,7 @@ class NodeWindowCommand(NodeCommand, sublime_plugin.WindowCommand):
       return view.file_name()
 
   def is_enabled(self):
-    return True; # A better test should be made. Fx. is this a js file?
+    return True # A better test should be made. Fx. is this a js file?
 
 
   def get_file_name(self):
@@ -155,7 +155,7 @@ class NodeTextCommand(NodeCommand, sublime_plugin.TextCommand):
     return self.view
 
   def is_enabled(self):
-    return True; # A better test should be made. Fx. is this a js file?
+    return True # A better test should be made. Fx. is this a js file?
 
   def get_file_name(self):
     return os.path.basename(self.view.file_name())
@@ -229,8 +229,8 @@ class NodeRunArgumentsCommand(NodeTextCommand):
 
   def on_input(self, message):
     command = message.split()
-    command.insert(0, self.view.file_name());
-    command.insert(0, 'node');
+    command.insert(0, self.view.file_name())
+    command.insert(0, 'node')
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
@@ -243,9 +243,9 @@ class NodeDrunArgumentsCommand(NodeTextCommand):
 
   def on_input(self, message):
     command = message.split()
-    command.insert(0, self.view.file_name());
-    command.insert(0, 'debug');
-    command.insert(0, 'node');
+    command.insert(0, self.view.file_name())
+    command.insert(0, 'debug')
+    command.insert(0, 'node')
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
@@ -261,7 +261,7 @@ class NodeNpmCommand(NodeTextCommand):
 
   def on_input(self, message):
     command = message.split()
-    command.insert(0, "npm");
+    command.insert(0, "npm")
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
@@ -288,7 +288,7 @@ class NodeNpmUninstallCommand(NodeTextCommand):
 
   def on_input(self, message):
     command = message.split()
-    command.insert(0, "npm");
+    command.insert(0, "npm")
     command.insert(1, "uninstall")
     self.run_command(command, self.command_done)
 
@@ -305,7 +305,7 @@ class NodeNpmSearchCommand(NodeTextCommand):
 
   def on_input(self, message):
     command = message.split()
-    command.insert(0, "npm");
+    command.insert(0, "npm")
     command.insert(1, "search")
     self.run_command(command, self.command_done)
 
